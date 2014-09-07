@@ -1,0 +1,73 @@
+[{
+    "cat": "Background",
+    "section": [{
+        "title": "Birth Place",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate, impedit sapiente sunt quaerat optio ratione, voluptas consequuntur ullam eos veritatis labore? Eveniet, et ab voluptate error quod aut sed?"
+    }, {
+        "title": "Country Raised",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi consequatur eligendi rerum, sit minus debitis, facere eaque labore quos velit harum, doloribus tenetur iste dignissimos voluptate libero dolor, aliquam rem."
+    }, {
+        "title": "Languages Spoken",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nihil, dicta alias minima culpa modi blanditiis perferendis unde error nesciunt dignissimos. Inventore id labore eius maiores assumenda animi sed officiis!"
+    }],
+    "icon": "../images/public.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, corrupti amet at architecto perferendis officiis commodi unde aliquid placeat, quo quia aut enim et repellat. Tempore qui dolorem, aut numquam.",
+    "image": "http://upload.wikimedia.org/wikipedia/commons/0/02/4028_-_Zermatt_-_Matterhorn_from_Kirchebr%C3%BCcke.JPG"
+}, {
+    "cat": "Education",
+    "section": [{
+        "title": "Degree",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id veritatis quo qui, odit commodi ad quod earum eius eaque amet, reprehenderit beatae fugit iure! Quam, cupiditate, exercitationem. Iure, delectus, officia."
+    }, {
+        "title": "University",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi explicabo eligendi nostrum sint maxime voluptates iure, voluptas iste repudiandae deleniti similique sapiente ducimus quas ea incidunt accusamus voluptate laborum aspernatur!"
+    }],
+    "icon": "../images/school.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit velit ut, molestias nulla harum commodi minus temporibus aperiam repellendus sequi tenetur id deserunt illo perferendis corporis ratione, reiciendis voluptatibus, tempore.",
+    "image": "http://upload.wikimedia.org/wikipedia/commons/a/a3/UMichAngellHall.jpg"
+}, {
+    "cat": "Experience",
+    "section": [{
+        "title": "Paid/Unpaid Jobs",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quidem rem, velit soluta quasi at id. Animi voluptas cumque iure facilis sint sit, accusantium vel possimus ad in. Officiis, itaque!"
+    }],
+    "icon": "../images/work.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat perferendis provident atque suscipit error illum omnis, excepturi ut, quam quis quos libero? Sint veritatis nesciunt harum saepe aperiam, illum et.",
+    "image": "https://flic.kr/p/6snqB6"
+}, {
+    "cat": "Interests",
+    "section": [{
+        "title": "Passions, Hobbies",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quidem, nulla quibusdam laudantium facilis a blanditiis nemo, enim, aliquam illo adipisci delectus. Provident quas beatae optio esse reprehenderit minima repellat."
+    }],
+    "icon": "../images/favorite.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In deserunt ex obcaecati nam enim molestias nemo optio tempora voluptate quo, quaerat reprehenderit adipisci cum deleniti harum nihil quas laborum itaque.",
+    "image": "https://flic.kr/p/gwcD7s"
+}, {
+    "cat": "Skills",
+    "section": [{
+        "title": "Hard, Soft Skills",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati natus perferendis minus id nihil, reprehenderit delectus a aperiam alias ipsum voluptas dignissimos expedita voluptate impedit sed recusandae dolor laudantium consequatur."
+    }],
+    "icon": "../images/star.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro velit suscipit quae optio. Deserunt nihil, maxime eveniet dolor voluptatem dicta ipsa eum, praesentium dolore neque distinctio reiciendis eaque maiores beatae.",
+    "image": "https://flic.kr/p/7NFTF6"
+}, {
+    "cat": "Projects",
+    "section": [{
+        "title": "Class Projects, Side Projects",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus facere distinctio ipsa inventore illo harum dignissimos, blanditiis porro. Eveniet iure, perferendis quaerat laboriosam quod veniam non ipsa esse id accusamus."
+    }],
+    "icon": "../images/folder.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quae sunt totam quia quas dolore laudantium deleniti, tempore obcaecati optio laborum, amet tenetur maxime sit incidunt. Veniam modi rem, consequatur.",
+    "image": "Swiss Dinner flyer"
+}, {
+    "cat": "Additional",
+    "section": [{
+        "title": "Miscellaneous/Interesting Information",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur dicta nulla nemo modi consectetur voluptates provident iste nobis sint animi culpa non possimus similique tempore dolorem esse omnis, blanditiis aperiam."
+    }],
+    "icon": "../images/flash-on.svg",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dignissimos nobis itaque doloribus numquam, possimus ut, maiores natus laudantium vitae soluta consequatur excepturi expedita neque, omnis minus suscipit illo culpa.",
+    "image": "https://flic.kr/p/9VCMJf"
+}]

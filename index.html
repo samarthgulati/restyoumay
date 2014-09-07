@@ -1,0 +1,285 @@
+<html>
+
+<head>
+    <style>
+    template {
+        display: none !important;
+    }
+    /* injected by platform.js */
+    </style>
+    <style>
+    body {
+        transition: opacity ease-in 0.2s;
+    }
+    body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+    }
+
+    #title{
+        color:white !important;
+    }
+    </style>
+    <style>
+    body {
+        transition: opacity ease-in 0.2s;
+    }
+    body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+    }
+
+    .main-label{
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-weight: 700;
+        color: #444;
+        text-shadow: 3px 2px 0 #ffcb05,4px 3px 0 #707070;
+        letter-spacing: 1px;
+        font-size: 2.5em;
+    }
+    </style>
+
+    <title>RestYouMay</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+
+    <script src="components/platform/platform.js"></script>
+    <link rel="import" href="components/polymer/polymer.html">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="import" href="components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="components/core-list/core-list.html">
+    <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="components/core-item/core-item.html">
+    <link rel="import" href="components/paper-menu-button/paper-menu-button.html">
+    <link rel="import" href="post-service/post-service.html">
+    <link rel="import" href="views/post-list.html">
+    <link rel="import" href="views/cat-list.html">
+
+
+
+    <style shim-shadowdom="">
+    html,
+    body {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        color: #333;
+    }
+    </style>
+
+    <style>
+    [touch-action="none"] {
+        -ms-touch-action: none;
+        touch-action: none;
+    }
+    html /deep/[touch-action="none"] {
+        -ms-touch-action: none;
+        touch-action: none;
+    }
+    [touch-action="auto"] {
+        -ms-touch-action: auto;
+        touch-action: auto;
+    }
+    html /deep/[touch-action="auto"] {
+        -ms-touch-action: auto;
+        touch-action: auto;
+    }
+    [touch-action="pan-x"] {
+        -ms-touch-action: pan-x;
+        touch-action: pan-x;
+    }
+    html /deep/[touch-action="pan-x"] {
+        -ms-touch-action: pan-x;
+        touch-action: pan-x;
+    }
+    [touch-action="pan-y"] {
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    }
+    html /deep/[touch-action="pan-y"] {
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    }
+    [touch-action="pan-x pan-y"],
+    [touch-action="pan-y pan-x"] {
+        -ms-touch-action: pan-x pan-y;
+        touch-action: pan-x pan-y;
+    }
+    html /deep/[touch-action="pan-x pan-y"],
+    html /deep/[touch-action="pan-y pan-x"] {
+        -ms-touch-action: pan-x pan-y;
+        touch-action: pan-x pan-y;
+    }
+    [touch-action="manipulation"] {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    }
+    html /deep/[touch-action="manipulation"] {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    }
+    </style>
+    </script>
+</head>
+
+
+<body>
+        <style>
+        .main-bgd{
+          background-color: #eeeeee;
+        }
+        core-scroll-header-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        /* background for toolbar when it is at its full size */
+        core-scroll-header-panel::shadow #headerBg {
+            background-image: url(http://upload.wikimedia.org/wikipedia/commons/0/02/4028_-_Zermatt_-_Matterhorn_from_Kirchebr%C3%BCcke.JPG);
+        }
+        /* background for toolbar when it is condensed */
+        core-scroll-header-panel::shadow #condensedHeaderBg {
+            background-color: #f4b400;
+        }
+        core-toolbar {
+            color: #f1f1f1;
+            fill: #f1f1f1;
+            background-color: transparent;
+        }
+        .title {
+            -webkit-transform-origin: 0;
+            transform-origin: 0;
+            font-size: 40px;
+        }
+        .content {
+            padding: 10px 30px;
+        }
+        [main] {
+            height: 100%;
+        }
+        #hamburger {
+            display: none;
+        }
+        core-drawer-panel[narrow] #hamburger {
+            display: inline-block;
+        }
+        [drawer] {
+            background-color: #ffcb05 !important;
+        }
+        </style>
+        <post-service id="service" posts="{{posts}}"></post-service>
+
+        <core-drawer-panel id="drawerPanel" drawerwidth="320px" responsivewidth="{{responsiveWidth}}" touch-action="" selected="main">
+
+            <core-scroll-header-panel condenses="" main>
+
+                <core-toolbar class="tall">
+                    <core-icon-button icon="menu" id="hamburger" onclick="document.querySelector('core-drawer-panel').togglePanel();"></core-icon-button>
+
+                    <div flex=""></div>
+                    <core-icon-button icon="create" on-click="startEdit()"></core-icon-button>
+                    
+                    <paper-menu-button icon="more-vert" halign="right" >
+                      <paper-item label="Refresh" center="" horizontal="" layout=""></paper-item>
+                      <paper-item label="Send Feedback" center="" horizontal="" layout=""></paper-item>
+                      <paper-item label="Settings" center="" horizontal="" layout=""></paper-item>
+                      <paper-item label="Help" center="" horizontal="" layout=""></paper-item>
+                      <paper-item label="Sign Out" center="" horizontal="" layout=""></paper-item>
+                    </paper-menu-button>
+                    
+                    <paper-input value="Name" id="title" class="bottom indent title" style="-webkit-transform: scale(1) translateZ(0px); transform: scale(1) translateZ(0px);">Name</paper-input>
+
+                </core-toolbar>
+                <data-service id="service" data="{{dataStorage}}"></data-service>
+                <div class="content main-bgd">
+                    <div layout vertical center>
+                        <post-list show="all"></post-list>
+                    </div>
+
+                </div>
+
+            </core-scroll-header-panel>
+            <core-header-panel drawer="">
+
+                <core-toolbar class="medium-tall">
+                    <div class="main-label">RESTYOUMAY</div>
+                </core-toolbar>
+                <div>
+                   <cat-list></cat-list>
+
+                </div>
+                
+
+            </core-header-panel>
+        </core-drawer-panel>
+        <script>
+        /*(function() {
+            Polymer('r-y-m', {
+                ready: function() {
+                    this.data = [{
+                        cat: "Background",icon:"public.svg",sub-title:"",text:""
+                    },{
+                        cat: "Education",icon:"school.svg",sub-title:"",text:""
+                    }, {
+                        cat: "Skills",icon:"work.svg",sub-title:"",text:""
+                    }, {
+                        cat: "Experience",icon:"favorite.svg",sub-title:"",text:""
+                    }, {
+                        cat: "Projects",icon:"star.svg",sub-title:"",text:""
+                    }, {
+                        cat: "Achievements",icon:"folder.svg",sub-title:"",text:""
+                    }, {
+                        cat: "Additional",icon:"flash-on.svg",sub-title:"",text:""
+                    }];
+                }
+            });
+        })();*/
+        </script>
+        <script>
+        var window.edit = false;
+        function startEdit(){
+            window.edit = true;
+        }
+        
+
+        (function(){
+            Polymer({
+                editing_mode:false,
+                start_edit:function(){
+                    this.editing_mode=true;
+                },
+            });
+        })();
+
+        // custom transformation: scale header's title
+        var titleStyle = document.querySelector('.title').style;
+        addEventListener('core-header-transform', function(e) {
+            var d = e.detail;
+            var m = d.height - d.condensedHeight;
+            var scale = Math.max(0.75, (m - d.y) / (m / 0.25) + 0.75);
+            titleStyle.transform = titleStyle.webkitTransform =
+                'scale(' + scale + ') translateZ(0)';
+        });
+        </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

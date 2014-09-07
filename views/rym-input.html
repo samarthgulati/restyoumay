@@ -1,0 +1,29 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/paper-input/paper-input.html">
+
+<polymer-element name="rym-input">
+<template>
+<paper-input  floatinglabel hidden?="{{editing}}"  on-keyup="{{keyupAction}}" on-keypress="{{keypressAction}}" layout vertical></paper-input>
+</template>
+	<script>
+	Polymer("rym-input",{});
+		(function() {
+			var ENTER_KEY = 13;
+			var ESC_KEY = 27;
+			Polymer('rym-input', {
+				keypressAction: function(e, detail, sender) {
+					// Listen for enter on keypress but esc on keyup, because
+					// IE doesn't fire keyup for enter.
+					if (e.keyCode === ENTER_KEY) {
+						this.fire('rym-input-commit');
+					}
+				},
+				keyupAction: function(e, detail, sender) {
+					if (e.keyCode === ESC_KEY) {
+						this.fire('rym-input-cancel');
+					}
+				}
+			});
+		})();
+	</script>
+</polymer-element>
